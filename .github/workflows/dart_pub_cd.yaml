@@ -8,11 +8,6 @@ on:
 
 
 jobs:
-  publishing:
-    runs-on: ubuntu-latest
-    steps:
-      - name: 'Checkout'
-        uses: actions/checkout@main
+  publish:
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
         
-      - name: 'Publish'
-        uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
