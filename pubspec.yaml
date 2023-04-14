@@ -1,0 +1,22 @@
+name: mankeli_core
+description: A Core Package Which Contains Miscaellaneous Stuff Used Across All
+  Of Mankeli Solutions Dart Projects
+version: 0.0.1
+homepage: https://mankeli.co
+repository: https://github.com/Mankeli-Software/mankeli_core
+issue_tracker: https://github.com/Mankeli-Software/mankeli_core/issues
+
+environment:
+  sdk: '>=2.18.4 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  logger: ^1.3.0
+  meta: any
+
+
+dev_dependencies:
+  dart_code_metrics: any
+  mankeli_analysis: ^1.1.0
+
