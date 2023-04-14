@@ -2,10 +2,14 @@ name: '[CD]'
 
 on:
   push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
     branches:
-      - main
-  workflow_dispatch:
+      - 'main'
 
+jobs:
+  publish:
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
 
 jobs:
   publish:
