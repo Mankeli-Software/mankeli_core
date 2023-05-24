@@ -1,7 +1,7 @@
 name: mankeli_core
 description: A Core Package Which Contains Miscaellaneous Stuff Used Across All
   Of Mankeli Solutions Dart Projects
-version: 0.0.2
+version: 0.0.3
 homepage: https://mankeli.co
 repository: https://github.com/Mankeli-Software/mankeli_core
 issue_tracker: https://github.com/Mankeli-Software/mankeli_core/issues
