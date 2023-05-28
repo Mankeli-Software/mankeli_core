@@ -1,5 +1,10 @@
 # mankeli_core changelog
 
+## 0.0.4
+
+- Adds utility extensions for String (case modifying, reversing)
+- Adds utility extensions for Iterable (singleWhereOrNull, getting random item)
+
 ## 0.0.3
 
 - Adds extensions to create durations with int.seconds etc.
