@@ -12,7 +12,8 @@ extension StringExtension on String {
   /// - '_'
   /// - '.'
   /// - '/'
-  List<String> get parts => split(RegExp(r'\s+|-|_|\.|/'));
+  List<String> get parts =>
+      split(RegExp(r'\s+|-|_|\.|/')).map((s) => s.lowerCase).toList();
 
   /// {@macro string_extension}
   ///

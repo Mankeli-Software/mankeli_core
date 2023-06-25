@@ -1,5 +1,9 @@
 # mankeli_core changelog
 
+## 0.0.5
+
+- Makes case modifying support all capslock input
+
 ## 0.0.4
 
 - Adds utility extensions for String (case modifying, reversing)
