@@ -43,7 +43,7 @@ class AppLogger {
   /// Use [AppLogger.instance.verbose] or [AppLogger.v] to log and
   /// override verbose logs
   /// {@endtemplate}
-  LoggerCallback verbose = defaultLogger.v;
+  LoggerCallback verbose = _log(defaultLogger.t);
 
   /// {@template debug}
   /// {@macro logger}
@@ -51,7 +51,7 @@ class AppLogger {
   /// Use [AppLogger.instance.debug] or [AppLogger.d] to log and
   /// override debug logs
   /// {@endtemplate}
-  LoggerCallback debug = defaultLogger.d;
+  LoggerCallback debug = _log(defaultLogger.d);
 
   /// {@template info}
   /// {@macro logger}
@@ -59,7 +59,7 @@ class AppLogger {
   /// Use [AppLogger.instance.info] or [AppLogger.i] to log and
   /// override info logs
   /// {@endtemplate}
-  LoggerCallback info = defaultLogger.i;
+  LoggerCallback info = _log(defaultLogger.i);
 
   /// {@template warning}
   /// {@macro logger}
@@ -67,7 +67,7 @@ class AppLogger {
   /// Use [AppLogger.instance.warning] or [AppLogger.w] to log and
   /// override warning logs
   /// {@endtemplate}
-  LoggerCallback warning = defaultLogger.w;
+  LoggerCallback warning = _log(defaultLogger.w);
 
   /// {@template error}
   /// {@macro logger}
@@ -75,7 +75,7 @@ class AppLogger {
   /// Use [AppLogger.instance.error] or [AppLogger.e] to log and
   /// override error logs
   /// {@endtemplate}
-  LoggerCallback error = defaultLogger.e;
+  LoggerCallback error = _log(defaultLogger.e);
 
   /// {@template wtf}
   /// {@macro logger}
@@ -83,7 +83,7 @@ class AppLogger {
   /// Use [AppLogger.instance.whatTheFuck] or [AppLogger.wtf] to log and
   /// override wtf logs
   /// {@endtemplate}
-  LoggerCallback whatTheFuck = defaultLogger.wtf;
+  LoggerCallback whatTheFuck = _log(defaultLogger.f);
 
   /// {@template analytic}
   /// {@macro logger}
@@ -124,4 +124,22 @@ class AppLogger {
 
   /// {@macro crashlytic}
   static LoggerCallback get c => instance.crashlytic;
+
+  static LoggerCallback _log(
+    FutureOr<void> Function(
+      dynamic message, {
+      DateTime? time,
+      Object? error,
+      StackTrace? stackTrace,
+    }) callback,
+  ) {
+    FutureOr<void> log(
+      String message, [
+      dynamic error,
+      StackTrace? stackTrace,
+    ]) =>
+        callback(message, error: error, stackTrace: stackTrace);
+
+    return log;
+  }
 }
