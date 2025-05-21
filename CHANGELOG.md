@@ -1,5 +1,11 @@
 # mankeli_core changelog
 
+## 0.0.6
+
+- Removes DCM dependencies
+- Migrates logger dependency to 2.x
+- Updates dependencies
+
 ## 0.0.5
 
 - Makes case modifying support all capslock input
